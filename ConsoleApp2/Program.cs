@@ -51,8 +51,6 @@ namespace ConsoleApp2
             string zoo = fauna.ToString("R$ #.##");
             zoo = Convert.ToString(fauna);
 
-            Console.WriteLine(fauna);
-
             Console.ReadKey();
         }
         public static decimal ObterValorD() { return 125m; }
