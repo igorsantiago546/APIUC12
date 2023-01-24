@@ -41,7 +41,7 @@ namespace ConsoleApp2
             }
             else
             {
-                ValorTroco = valor - boleto.Valor;
+               ValorTroco = (valor - boleto.Valor) * -1;
             }
             return resultado;    
              

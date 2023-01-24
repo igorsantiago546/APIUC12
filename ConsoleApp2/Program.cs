@@ -62,8 +62,8 @@ namespace ConsoleApp2
             }
             else
             {
-                Console.WriteLine("Pagamento Incompleto");
-                Console.WriteLine("Resta a pagar R${0}", pagamento.ValorTroco * -1);
+                Console.WriteLine("Pagamento Incompleto!");
+                Console.WriteLine("Resta a pagar R${0}", pagamento.ValorTroco);
             }
             
             Console.ReadKey();
