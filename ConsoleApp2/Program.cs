@@ -65,7 +65,8 @@ namespace ConsoleApp2
                 Console.WriteLine("Pagamento Incompleto!");
                 Console.WriteLine("Resta a pagar R${0}", pagamento.ValorTroco);
             }
-
+            Console.WriteLine("Digite o valor do Capital");
+            double capital = Console.ReadLine();
             Console.WriteLine("{0} parcelas de R${1}",8,pagamento.CalcularParcela(1000,1.89,8).ToString("#.00"));
             Console.WriteLine("Com juro total de R${0} no financiamento", pagamento.Juro.ToString("#.00"));
             
