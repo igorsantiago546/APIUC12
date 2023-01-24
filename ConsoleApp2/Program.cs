@@ -54,10 +54,20 @@ namespace ConsoleApp2
 
             Pagamento pagamento = new Pagamento();
             Boleto boleto = new Boleto();
-            boleto.Valor = 1543.58;
-            pagamento.Registrar(boleto);
-
+            boleto.Valor = 198.50;
+            if (pagamento.Registrar(boleto, 140.85))
+            {
+                Console.WriteLine("Pagamento Realizado!");
+                Console.WriteLine("Troco R${0}", pagamento.ValorTroco);
+            }
+            else
+            {
+                Console.WriteLine("Pagamento Incompleto");
+                Console.WriteLine("Resta a pagar R${0}", pagamento.ValorTroco * -1);
+            }
+            
             Console.ReadKey();
+
         }
         public static decimal ObterValorD() { return 125m; }
     }
