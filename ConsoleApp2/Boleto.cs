@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    internal class Boleto
+    public class Boleto
     {
+        public int Id { get; set; }
+        public double Valor { get; set; }
+        public string BarCode { get; set; }
+
+        public Boleto() { }
+
     }
 }
