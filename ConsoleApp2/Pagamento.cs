@@ -12,6 +12,7 @@ namespace ConsoleApp2
         private int id;
         private DateTime data;
         private double valor;
+        private double juro;
 
         // construtores (método)
 
@@ -27,8 +28,7 @@ namespace ConsoleApp2
         public int Id { get => id; set => id = value; }
         public DateTime Data { get => data; set => data = value; }
         public double ValorTroco { get => valor; set => valor = value; }
-
-        public double ValorF { get => valor; set => valor = value; }
+        public double Juro { get => juro; set => juro = value; }
 
         // método da classe (ações)
         public bool Registrar(Boleto  boleto, double valor)
@@ -46,9 +46,17 @@ namespace ConsoleApp2
             return resultado;    
              
         }
-        public double CalcularJuro()
+        private double CalcularJuro(double capital, double montante)
         {
-            return 0.0;
+            juro = montante - capital;
+            return juro;
+        }
+
+        public double CalcularParcela( double valor, double taxa, double periodo)
+        {
+            double montante = valor * Math.Pow(1 + (taxa/100),periodo);
+            CalcularJuro(valor, montante);
+            return montante/periodo;
         }
         public void Gravar()
         {
