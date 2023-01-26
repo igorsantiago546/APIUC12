@@ -13,25 +13,26 @@ namespace ConsoleApp2
         private DateTime data;
         private double valor;
         private double juro;
+        private Boleto boleto;
 
         // construtores (método)
 
-        public Pagamento() { }
-
-        public Pagamento(double _valor)
-        {
-            this.id = 0;
-            valor = _valor;
+        public Pagamento() 
+        { // Criando composição
+           Boleto = new Boleto();
         }
+
+
 
         // proriedades (encapsulamento - método de acesso)
         public int Id { get => id; set => id = value; }
         public DateTime Data { get => data; set => data = value; }
         public double ValorTroco { get => valor; set => valor = value; }
         public double Juro { get => juro; set => juro = value; }
+        public Boleto Boleto { get => boleto; set => boleto = value; }
 
         // método da classe (ações)
-        public bool Registrar(Boleto  boleto, double valor)
+        public bool Registrar(Boleto  boleto, double valor) //E uma agregação 
         {
             bool resultado = false;
             if (valor >= boleto.Valor)
@@ -46,16 +47,15 @@ namespace ConsoleApp2
             return resultado;    
              
         }
-        private double CalcularJuro(double capital, double montante)
+        private double CalcularJuro(Boleto boleto)
         {
-            juro = montante - capital;
+            
             return juro;
         }
 
         public double CalcularParcela( double valor, double taxa, double periodo)
         {
             double montante = valor * Math.Pow(1 + (taxa/100),periodo);
-            CalcularJuro(valor, montante);
             return montante/periodo;
         }
         public void Gravar()

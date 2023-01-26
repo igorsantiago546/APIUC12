@@ -54,17 +54,24 @@ namespace ConsoleApp2
 
             Pagamento pagamento = new Pagamento();
             Boleto boleto = new Boleto();
+            boleto.Vencimento = Convert.ToDateTime("2022-12-07");
+
+            //Console.WriteLine(boleto.Vencimento.ToString());
+
+
             boleto.Valor = 198.50;
-            if (pagamento.Registrar(boleto, 140.85))
+            if (pagamento.Registrar(boleto, 200))
             {
                 Console.WriteLine("Pagamento Realizado!");
-                Console.WriteLine("Troco R${0}", pagamento.ValorTroco);
+                Console.WriteLine("Troco R${0}", pagamento.ValorTroco.ToString("#.00"));
             }
             else
             {
                 Console.WriteLine("Pagamento Incompleto!");
                 Console.WriteLine("Resta a pagar R${0}", pagamento.ValorTroco);
             }
+            Console.WriteLine("Boleto pago com " + boleto.DiasDeAtraso() + " dias de atraso."  );
+
             Console.WriteLine("Digite o valor do Capital");
             double capital = double.Parse(Console.ReadLine());
             Console.WriteLine("Digite a taxa de juro");
