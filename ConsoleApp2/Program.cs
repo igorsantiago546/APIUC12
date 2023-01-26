@@ -79,7 +79,7 @@ namespace ConsoleApp2
 
             for (int i = 0; i < parcelas; i++)
             {
-                Console.WriteLine("{0}ª -> {1}",i+1,valorParcela.ToString("#.00");
+                Console.WriteLine("{0}ª -> {1} -> {2} ",i+1,valorParcela.ToString("#.00"), DateTime.Now.Date);
             }
 
 
