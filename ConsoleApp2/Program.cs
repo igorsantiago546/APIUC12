@@ -66,10 +66,23 @@ namespace ConsoleApp2
                 Console.WriteLine("Resta a pagar R${0}", pagamento.ValorTroco);
             }
             Console.WriteLine("Digite o valor do Capital");
-            double capital = Console.ReadLine();
-            Console.WriteLine("{0} parcelas de R${1}",8,pagamento.CalcularParcela(1000,1.89,8).ToString("#.00"));
+            double capital = double.Parse(Console.ReadLine());
+            Console.WriteLine("Digite a taxa de juro");
+            double taxa = double.Parse(Console.ReadLine());
+            Console.WriteLine("Digite o número de parcelas");
+            double parcelas = double.Parse(Console.ReadLine());
+
+
+            var valorParcela = pagamento.CalcularParcela(capital, taxa, parcelas);
+            Console.WriteLine("{0} parcelas de R${1}",parcelas,valorParcela.ToString("#.00"));
             Console.WriteLine("Com juro total de R${0} no financiamento", pagamento.Juro.ToString("#.00"));
-            
+
+            for (int i = 0; i < parcelas; i++)
+            {
+                Console.WriteLine("{0}ª -> {1}",i+1,valorParcela.ToString("#.00");
+            }
+
+
             Console.ReadKey();
 
         }
