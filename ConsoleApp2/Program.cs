@@ -11,13 +11,13 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             //Console.WriteLine("TI92, Começou agora!!!!");
-            int idade = 25;
-            double medida = 15.98;
-            sbyte x = 127;
-            byte y = 25;
-            short z = 6500;
-            uint i = 0;
-            ulong k = 0;
+            //int idade = 25;
+            //double medida = 15.98;
+            //sbyte x = 127;
+            //byte y = 25;
+            //short z = 6500;
+            //uint i = 0;
+            //ulong k = 0;
 
 
             //string nome = "Igor Santiago Macedo";
@@ -35,21 +35,21 @@ namespace ConsoleApp2
 
 
 
-            double valor = 155.89;
+            //double valor = 155.89;
 
-            string birds = "15";
-            valor = 124d;
+            //string birds = "15";
+            //valor = 124d;
 
             // conversão c#  Cast
-            float massa = (float)145m;
-            massa = (float)ObterValorD();
+            //float massa = (float)145m;
+            //massa = (float)ObterValorD();
 
             // conversão c#  Parse
-            decimal fauna = decimal.Parse(birds);
+            //decimal fauna = decimal.Parse(birds);
 
             // conversão c# Class Convert
-            string zoo = fauna.ToString("R$ #.##");
-            zoo = Convert.ToString(fauna);
+            //string zoo = fauna.ToString("R$ #.##");
+            //zoo = Convert.ToString(fauna);
 
 
             Pagamento pagamento = new Pagamento();
@@ -70,7 +70,7 @@ namespace ConsoleApp2
             Console.WriteLine("Digite a taxa de juro");
             double taxa = double.Parse(Console.ReadLine());
             Console.WriteLine("Digite o número de parcelas");
-            double parcelas = double.Parse(Console.ReadLine());
+            int parcelas = int.Parse(Console.ReadLine());
 
 
             var valorParcela = pagamento.CalcularParcela(capital, taxa, parcelas);
@@ -79,14 +79,14 @@ namespace ConsoleApp2
 
             for (int i = 0; i < parcelas; i++)
             {
-                Console.WriteLine("{0}ª -> {1} -> {2} ",i+1,valorParcela.ToString("#.00"), DateTime.Now.Date);
+                Console.WriteLine("{0}ª -> {1} -> {2} ",i+1,valorParcela.ToString("#.00"),DateTime.Now.Date);
             }
 
 
             Console.ReadKey();
 
         }
-        public static decimal ObterValorD() { return 125m; }
+      
     }
 }
 

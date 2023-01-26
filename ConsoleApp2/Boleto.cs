@@ -15,4 +15,4 @@ namespace ConsoleApp2
         public Boleto() { }
 
     }
-}
+} 
