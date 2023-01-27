@@ -27,30 +27,30 @@ namespace ConsoleApp2
         // proriedades (encapsulamento - método de acesso)
         public int Id { get => id; set => id = value; }
         public DateTime Data { get => data; set => data = value; }
-        public double ValorTroco { get => valor; set => valor = value; }
+        public double Valor { get => valor; set => valor = value; }
         public double Juro { get => juro; set => juro = value; }
         public Boleto Boleto { get => boleto; set => boleto = value; }
 
         // método da classe (ações)
-        public bool Registrar(Boleto  boleto, double valor) //E uma agregação 
+        public bool Registrar(double valor) //E uma agregação 
         {
             bool resultado = false;
             if (valor >= boleto.Valor)
             {
-                ValorTroco = valor - boleto.Valor;
+                Valor = valor - boleto.Valor;
                 resultado = true;
             }
             else
             {
-               ValorTroco = (valor - boleto.Valor) * -1;
+               Valor = (valor - boleto.Valor) * -1;
             }
             return resultado;    
              
         }
-        private double CalcularJuro(Boleto boleto)
+        public double CalcularJuro()
         {
-            
-            return juro;
+            int dias = boleto.DiasDeAtraso();
+            return dias * 0.45;
         }
 
         public double CalcularParcela( double valor, double taxa, double periodo)
