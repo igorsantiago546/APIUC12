@@ -52,42 +52,144 @@ namespace ConsoleApp2
             //zoo = Convert.ToString(fauna);
 
 
-            Pagamento pagamento = new Pagamento();
-            pagamento.Boleto.Vencimento = Convert.ToDateTime("2022-12-07");
-            pagamento.Boleto.Valor = 198.50;
-            pagamento.Valor = pagamento.Boleto.Valor; 
-            if (pagamento.Boleto.DiasDeAtraso() > 0)
-            {
-                pagamento.Valor += pagamento.CalcularJuro();
-            }
-            if (pagamento.Registrar(200))
-            {
-                Console.WriteLine("Pagamento Realizado!");
-                Console.WriteLine("Troco R${0}", pagamento.Valor.ToString("#.00"));
-            }
-            else
-            {
-                Console.WriteLine("Pagamento Incompleto!");
-                Console.WriteLine("Resta a pagar R${0}", pagamento.Valor);
-            }
-            Console.WriteLine("Boleto pago com " + pagamento.Boleto.DiasDeAtraso() + " dias de atraso.");
+            //Pagamento pagamento = new Pagamento();
+            //pagamento.Boleto.Vencimento = Convert.ToDateTime("2022-12-07");
+            //pagamento.Boleto.Valor = 198.50;
+            //pagamento.Valor = pagamento.Boleto.Valor; 
+            //if (pagamento.Boleto.DiasDeAtraso() > 0)
+            //{
+            //    pagamento.Valor += pagamento.CalcularJuro();
+            //}
+            //if (pagamento.Registrar(200))
+            //{
+            //    Console.WriteLine("Pagamento Realizado!");
+            //    Console.WriteLine("Troco R${0}", pagamento.Valor.ToString("#.00"));
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Pagamento Incompleto!");
+            //    Console.WriteLine("Resta a pagar R${0}", pagamento.Valor);
+            //}
+            //Console.WriteLine("Boleto pago com " + pagamento.Boleto.DiasDeAtraso() + " dias de atraso.");
 
-            Console.WriteLine("Digite o valor do Capital");
-            double capital = double.Parse(Console.ReadLine());
-            Console.WriteLine("Digite a taxa de juro");
-            double taxa = double.Parse(Console.ReadLine());
-            Console.WriteLine("Digite o número de parcelas");
-            int parcelas = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Digite o valor do Capital");
+            //double capital = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Digite a taxa de juro");
+            //double taxa = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Digite o número de parcelas");
+            //int parcelas = int.Parse(Console.ReadLine());
 
 
-            var valorParcela = pagamento.CalcularParcela(capital, taxa, parcelas);
-            Console.WriteLine("{0} parcelas de R${1}",parcelas,valorParcela.ToString("#.00"));
-            Console.WriteLine("Com juro total de R${0} no financiamento", pagamento.Juro.ToString("#.00"));
+            //var valorParcela = pagamento.CalcularParcela(capital, taxa, parcelas);
+            //Console.WriteLine("{0} parcelas de R${1}",parcelas,valorParcela.ToString("#.00"));
+            //Console.WriteLine("Com juro total de R${0} no financiamento", pagamento.Juro.ToString("#.00"));
 
-            for (int i = 0; i < parcelas; i++)
+            //for (int i = 0; i < parcelas; i++)
+            //{
+            //    Console.WriteLine("{0}ª -> {1} -> {2} ",i+1,valorParcela.ToString("#.00"),DateTime.Now.Date);
+            //}
+
+            string nome = " Igor Santiago Macedo";
+            Console.WriteLine(nome);
+            var letras = nome.Contains("Santiago"); // retorna verdadeiro caso o texto exista na String
+            Console.WriteLine("O nome possue as letras 'Santiago' = " + letras);
+            var x = nome.EndsWith("edo");
+            Console.WriteLine("O nome termina com 'edo' = " + x);
+            x = nome.EndsWith("ago");
+            Console.WriteLine("O nome termina com 'ago' = " + x);
+            var conta = nome.Count();
+            Console.WriteLine("O texto possui " +conta+ " caracteres");
+            var teste = nome.Split(' ');
+            Console.WriteLine(teste[0]);
+            Console.WriteLine(teste[1]);
+            Console.WriteLine(teste[2]);
+            foreach (var item in teste)
             {
-                Console.WriteLine("{0}ª -> {1} -> {2} ",i+1,valorParcela.ToString("#.00"),DateTime.Now.Date);
+                Console.WriteLine(item);
             }
+            string dataTexto = "16/02/2003";
+            string[] dataExplode = dataTexto.Split('/');
+
+            DateTime vencimento = Convert.ToDateTime("18/01/1995 16:35:20");
+
+            DateTime data = new DateTime(int.Parse(dataExplode[2]), int.Parse(dataExplode[1]), int.Parse(dataExplode[0]));
+
+            int[,] valor = { { 1, 3 }, { 2, 9 } };
+            Console.Write(valor[0,0]+" ");
+            Console.WriteLine(valor[0,1]);
+            Console.Write(valor[1,0]+" ");
+            Console.WriteLine(valor[1,1]);
+
+            Array times = valor;
+            Console.WriteLine("A matriz possui {0} posições" ,times.Length);
+
+            int numero = nome.Length;
+            var sub = nome.PadLeft(50);
+            Console.WriteLine(sub);
+            sub = dataTexto.PadLeft(50);
+            Console.WriteLine(sub);
+
+            Console.WriteLine("REMOVE: " + nome.Remove(4,3));
+            Console.WriteLine("SUBSTITUIR: " + nome.Replace('a','U'));
+            Console.WriteLine("SUBSTRING: " + nome.Substring(4,6));
+            Console.WriteLine("TRIM: " + nome.Trim());
+            Console.WriteLine("MINÚSCULO: " + nome.ToLower());
+            Console.WriteLine("MAIÚSCULO: " + nome.ToUpper());
+
+            string frase = "Socorram me subi no onibus em marrocos";
+
+            Console.WriteLine("REVERSO: " + nome.Reverse());
+            Console.WriteLine(frase);
+            Console.WriteLine();
+            for (int i = nome.Length-1; i >= 0; i--)
+            {
+                Console.Write(nome.Substring(i,1));
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            // Atividade C# - Manipulação de String e matrizes
+            // 1 - Crie uma variável com o nome completo do Senac
+            // Serviço Nacional de Aprendizagem Comercial
+            string senac = "Serviço Nacional de Aprendizagem Comercial";
+            Console.WriteLine(" 1 = " + senac);
+            Console.WriteLine();
+            // a - Mostre todo o conteúdo em Maiúsculo
+            Console.WriteLine(" a =" + senac.ToUpper());
+            Console.WriteLine();
+            // b - Mostre todo o conteúdo em Minúsculo
+            Console.WriteLine(" b =" + senac.ToLower());
+            Console.WriteLine();
+            // c - Mostre todo o conteúdo invertido
+            for (int i = senac.Length - 1; i >= 0; i--)
+            {
+                Console.Write(senac.Substring(i, 1));
+            }
+            Console.WriteLine();
+            // d - Mostre apenas a palavra Aprendizagem 
+            Console.WriteLine(" d = " + senac.Substring(20,12));
+            // e - Exiba usando foreach as palavras que formam a frase em uma matriz
+
+            // f - Exiba a quantidade de caractere descontando os espaços
+            Console.WriteLine();
+            // g - mostre apenas a palavra Senac Invertida
+            string itq = "Senac Itaquera";
+            string g = itq.Substring(0,5);
+            for (int i = g.Length - 1; i >= 0; i--)
+            {
+                Console.Write(g.Substring(i, 1));
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            // h - substitua as letra 'a' por 'O' e 'i' por 'E'
+            Console.WriteLine(" h = " + senac.Replace('a','O'));
+            Console.WriteLine();
+            Console.WriteLine(" h = " + senac.Replace('i', 'E'));
+            Console.WriteLine();
+            // i - mostre a palavra Comercial em uma matriz
+            // j - mostre a frase completa sem os espaços
+
+
 
 
             Console.ReadKey();
