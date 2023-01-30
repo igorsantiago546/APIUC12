@@ -151,61 +151,94 @@ namespace ConsoleApp2
             // Atividade C# - Manipulação de String e matrizes
             // 1 - Crie uma variável com o nome completo do Senac
             // Serviço Nacional de Aprendizagem Comercial
-            string senac = "Serviço Nacional de Aprendizagem Comercial";
-           
-            Console.WriteLine(" 1 = " + senac);
-            Console.WriteLine();
-            // a - Mostre todo o conteúdo em Maiúsculo
-            Console.WriteLine(" a = " + senac.ToUpper());
-            Console.WriteLine();
-            // b - Mostre todo o conteúdo em Minúsculo
-            Console.WriteLine(" b = " + senac.ToLower());
-            Console.WriteLine();
-            // c - Mostre todo o conteúdo invertido
-            for (int i = senac.Length - 1; i >= 0; i--)
+            //string senac = "Serviço Nacional de Aprendizagem Comercial";
+
+            //Console.WriteLine(" 1 = " + senac);
+            //Console.WriteLine();
+            //// a - Mostre todo o conteúdo em Maiúsculo
+            //Console.WriteLine(" a = " + senac.ToUpper());
+            //Console.WriteLine();
+            //// b - Mostre todo o conteúdo em Minúsculo
+            //Console.WriteLine(" b = " + senac.ToLower());
+            //Console.WriteLine();
+            //// c - Mostre todo o conteúdo invertido
+            //for (int i = senac.Length - 1; i >= 0; i--)
+            //{
+            //    Console.Write(senac.Substring(i, 1));
+            //}
+            //Console.WriteLine();
+            //// d - Mostre apenas a palavra Aprendizagem 
+            //Console.WriteLine(" d = " + senac.Substring(20,12));
+            //Console.WriteLine();
+            //// e - Exiba usando foreach as palavras que formam a frase em uma matriz
+            //string[] home = senac.Split(' ');
+            //foreach (var rep in home)
+            //{
+            //    Console.Write(rep + " ");
+            //}
+            //Console.WriteLine();
+            //// f - Exiba a quantidade de caractere descontando os espaços
+            //var cont = senac.Replace(" ","").Length; 
+            //Console.WriteLine(" f = Possui " + cont );
+            //Console.WriteLine();
+            //// g - mostre apenas a palavra Senac Invertida
+            //string itq = "Senac Itaquera";
+            //string g = itq.Substring(0,5);
+            //for (int i = g.Length - 1; i >= 0; i--)
+            //{
+            //    Console.Write(g.Substring(i, 1));
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine();
+            //// h - substitua as letra 'a' por 'O' e 'i' por 'E'
+            //Console.WriteLine(" h = " + senac.Replace('a','O').Replace('i','E'));
+            //Console.WriteLine();
+
+            //// i - mostre a palavra Comercial em uma matriz
+            //string[] senacEx = senac.Split(' ');
+            //Console.WriteLine("i = " + senacEx[4]);
+            //Console.WriteLine();
+            //// j - mostre a frase completa sem os espaços
+            //string[] Uni = senac.Split(' ');
+            //foreach (var rep in Uni)
+            //{
+            //    Console.Write(rep);
+            //}
+
+            // estruturas de repetição
+            Console.Write("Digite um número de 1 a 9: ");
+            int numero = int.Parse(Console.ReadLine());
+            for (int i = 0; i < 10; i++)
             {
-                Console.Write(senac.Substring(i, 1));
+                Console.WriteLine("{3}º. -> {0} x {1} = {2}", i+1, numero, (i+1)*numero, i+1);
             }
             Console.WriteLine();
-            // d - Mostre apenas a palavra Aprendizagem 
-            Console.WriteLine(" d = " + senac.Substring(20,12));
-            Console.WriteLine();
-            // e - Exiba usando foreach as palavras que formam a frase em uma matriz
-            string[] home = senac.Split(' ');
-            foreach (var rep in home)
+            for (int i = 10; i > 0 ; i--)
             {
-                Console.Write(rep + " ");
-            }
-            Console.WriteLine();
-            // f - Exiba a quantidade de caractere descontando os espaços
-            var cont = senac.Replace(" ","").Length; 
-            Console.WriteLine(" f = Possui " + cont );
-            Console.WriteLine();
-            // g - mostre apenas a palavra Senac Invertida
-            string itq = "Senac Itaquera";
-            string g = itq.Substring(0,5);
-            for (int i = g.Length - 1; i >= 0; i--)
-            {
-                Console.Write(g.Substring(i, 1));
-            }
-            Console.WriteLine();
-            Console.WriteLine();
-            // h - substitua as letra 'a' por 'O' e 'i' por 'E'
-            Console.WriteLine(" h = " + senac.Replace('a','O').Replace('i','E'));
-            Console.WriteLine();
-            
-            // i - mostre a palavra Comercial em uma matriz
-            string[] senacEx = senac.Split(' ');
-            Console.WriteLine("i = " + senacEx[4]);
-            Console.WriteLine();
-            // j - mostre a frase completa sem os espaços
-            string[] Uni = senac.Split(' ');
-            foreach (var rep in Uni)
-            {
-                Console.Write(rep);
+                Console.WriteLine("{3}º. -> {0} x {1} = {2}", i, numero, i * numero, i );
+                Console.WriteLine("Deseja continuar? (s/n)");
+                if (Console.ReadLine() == "n") i = 0; i = 10;
             }
 
-
+            Object[] mtz = new Object[4];
+            string carro = "Honda";
+            mtz[0] = carro;
+            DateTime data = DateTime.Now.Date;
+            mtz[1] = data;
+            Boleto boleto = new Boleto();
+            boleto.Valor = 1259.69;
+            mtz[2] = boleto.Valor;
+            List<Pagamento> lista = new List<Pagamento>();
+            mtz[3] = lista;
+            foreach (var objeto in mtz)
+            {
+                Console.WriteLine(objeto);
+            }
+            int[] vetor = { 2, 6, 5, 8 };
+            foreach (var item in vetor)
+            {
+                Console.Write(item + " ");
+            }
             Console.ReadKey();
 
         }
