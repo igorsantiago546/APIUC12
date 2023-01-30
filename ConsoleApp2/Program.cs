@@ -239,6 +239,13 @@ namespace ConsoleApp2
             {
                 Console.Write(item + " ");
             }
+
+
+            do
+            {
+
+            } while (true);
+
             Console.ReadKey();
 
         }
