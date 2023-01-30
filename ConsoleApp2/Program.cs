@@ -89,64 +89,64 @@ namespace ConsoleApp2
             //    Console.WriteLine("{0}ª -> {1} -> {2} ",i+1,valorParcela.ToString("#.00"),DateTime.Now.Date);
             //}
 
-            string nome = " Igor Santiago Macedo";
-            Console.WriteLine(nome);
-            var letras = nome.Contains("Santiago"); // retorna verdadeiro caso o texto exista na String
-            Console.WriteLine("O nome possue as letras 'Santiago' = " + letras);
-            var x = nome.EndsWith("edo");
-            Console.WriteLine("O nome termina com 'edo' = " + x);
-            x = nome.EndsWith("ago");
-            Console.WriteLine("O nome termina com 'ago' = " + x);
-            var conta = nome.Count();
-            Console.WriteLine("O texto possui " +conta+ " caracteres");
-            var teste = nome.Split(' ');
-            Console.WriteLine(teste[0]);
-            Console.WriteLine(teste[1]);
-            Console.WriteLine(teste[2]);
-            foreach (var item in teste)
-            {
-                Console.WriteLine(item);
-            }
-            string dataTexto = "16/02/2003";
-            string[] dataExplode = dataTexto.Split('/');
+            //string nome = " Igor Santiago Macedo";
+            //Console.WriteLine(nome);
+            //var letras = nome.Contains("Santiago"); // retorna verdadeiro caso o texto exista na String
+            //Console.WriteLine("O nome possue as letras 'Santiago' = " + letras);
+            //var x = nome.EndsWith("edo");
+            //Console.WriteLine("O nome termina com 'edo' = " + x);
+            //x = nome.EndsWith("ago");
+            //Console.WriteLine("O nome termina com 'ago' = " + x);
+            //var conta = nome.Count();
+            //Console.WriteLine("O texto possui " +conta+ " caracteres");
+            //var teste = nome.Split(' ');
+            //Console.WriteLine(teste[0]);
+            //Console.WriteLine(teste[1]);
+            //Console.WriteLine(teste[2]);
+            //foreach (var item in teste)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //string dataTexto = "16/02/2003";
+            //string[] dataExplode = dataTexto.Split('/');
 
-            DateTime vencimento = Convert.ToDateTime("18/01/1995 16:35:20");
+            //DateTime vencimento = Convert.ToDateTime("18/01/1995 16:35:20");
 
-            DateTime data = new DateTime(int.Parse(dataExplode[2]), int.Parse(dataExplode[1]), int.Parse(dataExplode[0]));
+            //DateTime data = new DateTime(int.Parse(dataExplode[2]), int.Parse(dataExplode[1]), int.Parse(dataExplode[0]));
 
-            int[,] valor = { { 1, 3 }, { 2, 9 } };
-            Console.Write(valor[0,0]+" ");
-            Console.WriteLine(valor[0,1]);
-            Console.Write(valor[1,0]+" ");
-            Console.WriteLine(valor[1,1]);
+            //int[,] valor = { { 1, 3 }, { 2, 9 } };
+            //Console.Write(valor[0,0]+" ");
+            //Console.WriteLine(valor[0,1]);
+            //Console.Write(valor[1,0]+" ");
+            //Console.WriteLine(valor[1,1]);
 
-            Array times = valor;
-            Console.WriteLine("A matriz possui {0} posições" ,times.Length);
+            //Array times = valor;
+            //Console.WriteLine("A matriz possui {0} posições" ,times.Length);
 
-            int numero = nome.Length;
-            var sub = nome.PadLeft(50);
-            Console.WriteLine(sub);
-            sub = dataTexto.PadLeft(50);
-            Console.WriteLine(sub);
+            //int numero = nome.Length;
+            //var sub = nome.PadLeft(50);
+            //Console.WriteLine(sub);
+            //sub = dataTexto.PadLeft(50);
+            //Console.WriteLine(sub);
 
-            Console.WriteLine("REMOVE: " + nome.Remove(4,3));
-            Console.WriteLine("SUBSTITUIR: " + nome.Replace('a','U'));
-            Console.WriteLine("SUBSTRING: " + nome.Substring(4,6));
-            Console.WriteLine("TRIM: " + nome.Trim());
-            Console.WriteLine("MINÚSCULO: " + nome.ToLower());
-            Console.WriteLine("MAIÚSCULO: " + nome.ToUpper());
+            //Console.WriteLine("REMOVE: " + nome.Remove(4,3));
+            //Console.WriteLine("SUBSTITUIR: " + nome.Replace('a','U'));
+            //Console.WriteLine("SUBSTRING: " + nome.Substring(4,6));
+            //Console.WriteLine("TRIM: " + nome.Trim());
+            //Console.WriteLine("MINÚSCULO: " + nome.ToLower());
+            //Console.WriteLine("MAIÚSCULO: " + nome.ToUpper());
 
-            string frase = "Socorram me subi no onibus em marrocos";
+            //string frase = "Socorram me subi no onibus em marrocos";
 
-            Console.WriteLine("REVERSO: " + nome.Reverse());
-            Console.WriteLine(frase);
-            Console.WriteLine();
-            for (int i = nome.Length-1; i >= 0; i--)
-            {
-                Console.Write(nome.Substring(i,1));
-            }
-            Console.WriteLine();
-            Console.WriteLine();
+            //Console.WriteLine("REVERSO: " + nome.Reverse());
+            //Console.WriteLine(frase);
+            //Console.WriteLine();
+            //for (int i = nome.Length-1; i >= 0; i--)
+            //{
+            //    Console.Write(nome.Substring(i,1));
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine();
 
             // Atividade C# - Manipulação de String e matrizes
             // 1 - Crie uma variável com o nome completo do Senac
@@ -156,10 +156,10 @@ namespace ConsoleApp2
             Console.WriteLine(" 1 = " + senac);
             Console.WriteLine();
             // a - Mostre todo o conteúdo em Maiúsculo
-            Console.WriteLine(" a =" + senac.ToUpper());
+            Console.WriteLine(" a = " + senac.ToUpper());
             Console.WriteLine();
             // b - Mostre todo o conteúdo em Minúsculo
-            Console.WriteLine(" b =" + senac.ToLower());
+            Console.WriteLine(" b = " + senac.ToLower());
             Console.WriteLine();
             // c - Mostre todo o conteúdo invertido
             for (int i = senac.Length - 1; i >= 0; i--)
@@ -174,11 +174,13 @@ namespace ConsoleApp2
             string[] home = senac.Split(' ');
             foreach (var rep in home)
             {
-                Console.WriteLine(rep);
+                Console.Write(rep + " ");
             }
             Console.WriteLine();
             // f - Exiba a quantidade de caractere descontando os espaços
-            Console.WriteLine(senac.Count(' '));
+            var cont = senac.Replace(" ","").Length; 
+            Console.WriteLine(" f = Possui " + cont );
+            Console.WriteLine();
             // g - mostre apenas a palavra Senac Invertida
             string itq = "Senac Itaquera";
             string g = itq.Substring(0,5);
@@ -189,20 +191,19 @@ namespace ConsoleApp2
             Console.WriteLine();
             Console.WriteLine();
             // h - substitua as letra 'a' por 'O' e 'i' por 'E'
-            Console.WriteLine(" h = " + senac.Replace('a','O'));
+            Console.WriteLine(" h = " + senac.Replace('a','O').Replace('i','E'));
             Console.WriteLine();
-            Console.WriteLine(" h = " + senac.Replace('i', 'E'));
-            Console.WriteLine();
+            
             // i - mostre a palavra Comercial em uma matriz
             string[] senacEx = senac.Split(' ');
             Console.WriteLine("i = " + senacEx[4]);
             Console.WriteLine();
             // j - mostre a frase completa sem os espaços
-           Console.WriteLine(senac.Trim());
-            Console.WriteLine(senac.TrimStart());
-            Console.WriteLine(senac.Trim());    
-
-
+            string[] Uni = senac.Split(' ');
+            foreach (var rep in Uni)
+            {
+                Console.Write(rep);
+            }
 
 
             Console.ReadKey();
