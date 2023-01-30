@@ -152,6 +152,7 @@ namespace ConsoleApp2
             // 1 - Crie uma variável com o nome completo do Senac
             // Serviço Nacional de Aprendizagem Comercial
             string senac = "Serviço Nacional de Aprendizagem Comercial";
+           
             Console.WriteLine(" 1 = " + senac);
             Console.WriteLine();
             // a - Mostre todo o conteúdo em Maiúsculo
@@ -168,10 +169,16 @@ namespace ConsoleApp2
             Console.WriteLine();
             // d - Mostre apenas a palavra Aprendizagem 
             Console.WriteLine(" d = " + senac.Substring(20,12));
-            // e - Exiba usando foreach as palavras que formam a frase em uma matriz
-
-            // f - Exiba a quantidade de caractere descontando os espaços
             Console.WriteLine();
+            // e - Exiba usando foreach as palavras que formam a frase em uma matriz
+            string[] home = senac.Split(' ');
+            foreach (var rep in home)
+            {
+                Console.WriteLine(rep);
+            }
+            Console.WriteLine();
+            // f - Exiba a quantidade de caractere descontando os espaços
+            Console.WriteLine(senac.Count(' '));
             // g - mostre apenas a palavra Senac Invertida
             string itq = "Senac Itaquera";
             string g = itq.Substring(0,5);
@@ -187,7 +194,13 @@ namespace ConsoleApp2
             Console.WriteLine(" h = " + senac.Replace('i', 'E'));
             Console.WriteLine();
             // i - mostre a palavra Comercial em uma matriz
+            string[] senacEx = senac.Split(' ');
+            Console.WriteLine("i = " + senacEx[4]);
+            Console.WriteLine();
             // j - mostre a frase completa sem os espaços
+           Console.WriteLine(senac.Trim());
+            Console.WriteLine(senac.TrimStart());
+            Console.WriteLine(senac.Trim());    
 
 
 
